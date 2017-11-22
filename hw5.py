@@ -85,7 +85,7 @@ config = Config()
 class UserData(object):
     def __init__(self):
         self.user_data = self.read_user_data() 
-        Process(target=self.read_user_data()).start()
+        Process(target=self.read_user_data).start()
     def read_user_data(self):
         user_data_path = args.userdata_path
         user_data = []
@@ -137,7 +137,7 @@ class Calculator(object):
         return result
 
     def export(self, default = 'csv'):
-        Process(target=self.cal_for_all_user()).start()
+        Process(target=self.cal_for_all_user).start()
         result = queue2.get()
         with open(args.export_path,'w',newline = '') as file:
             writer = csv.writer(file)
@@ -145,5 +145,5 @@ class Calculator(object):
 
 if __name__ == '__main__':
     calculator = Calculator(UserData())
-    Process(target=calculator.export()).start()        
+    Process(target=calculator.export).start()        
     
