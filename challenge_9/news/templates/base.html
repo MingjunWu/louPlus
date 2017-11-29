@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    	<meta charset = "utf-8">
+    	<title> {% block title %} {% endblock %} </title>
+    	<link href="{{ url_for('static', filename = "bootstrap-3.3.7-dist/css/bootstrap.min.css") }}" rel = "stylesheet">
+    </head>
+    <body>
+    	{% block content %} {% endblock %} 
+    	<script src="{{ url_for('static', filename = "bootstrap-3.3.7-dist/js/bootstrap.min.js") }}"> </script>
+    <body>
